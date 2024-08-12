@@ -1,0 +1,16 @@
+node("linux_agent") {
+    def marks = getMarks("${name}")
+    println marks
+    /*println "studentName"
+    println studentName
+    println "$studentName"
+    println "${studentName}"*/
+    def sonarScannerPath = tool name: 'sonar-scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+    println "${sonarScannerPath}"
+}
+
+def getMarks(studentName) {
+    if(studentName == "Shiva")  {
+        return 100
+    }
+}
